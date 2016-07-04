@@ -42,26 +42,26 @@
   <ItemGroup>
     <Reference Include="Microsoft.AnalysisServices.Project">
       <HintPath>Microsoft.AnalysisServices.Project.DLL</HintPath>
-	  <SpecificVersion>False</SpecificVersion>
-	  <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.DataTransformationServices.VsIntegration">
       <HintPath>Microsoft.DataTransformationServices.VsIntegration.DLL</HintPath>
-	  <SpecificVersion>False</SpecificVersion>
-	  <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.DataWarehouse.VsIntegration, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>Microsoft.DataWarehouse.VsIntegration.DLL</HintPath>
       <SpecificVersion>False</SpecificVersion>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>Microsoft.SqlServer.ManagedDTS.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeploymentFileCompilerTask.cs" />
-    <Compile Include="DeployProjectToCatalogTask.cs" />
     <Compile Include="Serialization.cs" />
     <Compile Include="SR.cs" />
   </ItemGroup>
