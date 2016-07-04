@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Xml.Serialization;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
@@ -433,5 +434,44 @@ namespace Microsoft.SqlServer.IntegrationServices.Build
 				// TODO: read user settings - do we need to do this for MSBuild?
 			}
 		}
-	}
+
+        private Assembly currentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            //This handler is called only when the common language runtime tries to bind to the assembly and fails. 
+            //Retrieve the list of referenced assemblies in an array of AssemblyName. 
+            Assembly MyAssembly, objExecutingAssemblies;
+            string strTempAssmbPath = null;
+            try
+            {
+                objExecutingAssemblies = Assembly.GetExecutingAssembly();
+                AssemblyName[] arrReferencedAssmbNames = objExecutingAssemblies.GetReferencedAssemblies();
+
+                //Loop through the array of referenced assembly names. 
+                foreach (AssemblyName strAssmbName in arrReferencedAssmbNames)
+                {
+                    //Check for the assembly names that have raised the "AssemblyResolve" event. 
+                    if (strAssmbName.FullName.Substring(0, strAssmbName.FullName.IndexOf(",")) ==
+                        args.Name.Substring(0, args.Name.IndexOf(",")))
+                    {
+                        //Build the path of the assembly from where it has to be loaded.
+                        AssemblyPath _assemblyPath = new AssemblyPath();               
+                        strTempAssmbPath = _assemblyPath.GetAssemblyPath;
+                        if (!strTempAssmbPath.EndsWith("\\")) strTempAssmbPath += "\\";
+                        strTempAssmbPath += args.Name.Substring(0, args.Name.IndexOf(",")) + ".dll";
+                        break;
+                    }
+                }
+            }
+            catch (Exception currentDomain_AssemblyResolve_Exception)
+            {
+                //Console.WriteLine(currentDomain_AssemblyResolve_Exception.ToString());
+            }
+
+            //Load the assembly from the specified path.                     
+            MyAssembly = Assembly.LoadFrom(strTempAssmbPath);
+
+            //Return the loaded assembly. 
+            return MyAssembly;
+        }
+    }
 }
