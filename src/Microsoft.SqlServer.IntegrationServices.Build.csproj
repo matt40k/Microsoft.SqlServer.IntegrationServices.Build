@@ -45,21 +45,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AnalysisServices.Project">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\Microsoft.AnalysisServices.Project.DLL</HintPath>
+      <HintPath>Microsoft.AnalysisServices.Project.DLL</HintPath>
+	  <SpecificVersion>False</SpecificVersion>
+	  <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.DataTransformationServices.VsIntegration">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\Microsoft.DataTransformationServices.VsIntegration.DLL</HintPath>
+      <HintPath>Microsoft.DataTransformationServices.VsIntegration.DLL</HintPath>
+	  <SpecificVersion>False</SpecificVersion>
+	  <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.DataWarehouse.VsIntegration, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\Microsoft.DataWarehouse.VsIntegration.DLL</HintPath>
+      <HintPath>Microsoft.DataWarehouse.VsIntegration.DLL</HintPath>
       <SpecificVersion>False</SpecificVersion>
+	  <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+      <HintPath>Microsoft.SqlServer.ManagedDTS.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+	  <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
